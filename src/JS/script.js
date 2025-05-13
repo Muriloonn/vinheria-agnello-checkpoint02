@@ -14,27 +14,43 @@ alert("O usuário e a senha foram cadastrados no console!");
 
 let cadastros = 1;
 var cadastroVinho = prompt("Digite o nome do Vinho que deseja cadastrar:\n👇 ");
-while(cadastroVinho.trim() == "" && cadastroVinho == null) {
+while(cadastroVinho === null || cadastroVinho.trim() === "") {
     alert("Digite algo!");
     cadastroVinho = prompt("Digite o nome do Vinho que deseja cadastrar:\n👇 ");
 }
 alert("Vinho cadastrado com sucesso!");
 var safra = parseInt(prompt("Qual a safra do vinho:\n👇 "));
+while (isNaN(safra)) {
+    alert("Digite um ano válido.");
+    safra = parseInt(prompt("Qual a safra do vinho:\n👇 "));
+}
 var quantidade = parseInt(prompt("Quantos vinhos têm no estoque:\n👇 "));
+while (isNaN(quantidade)) {
+    alert("Digite uma quantidade válida. ");
+    quantidade = parseInt(prompt("Quantos vinhos têm no estoque:\n👇 "));
+}
 var estoqueAviso = estoqueBaixo(quantidade);
 var idade = anoAtual - safra;
 var classificacao = classificarVinho(idade);
 let continuarCadastro = prompt('Quer cadastrar mais algum vinho? (Responda apenas "sim" ou "não"):\n👇 ');
 while(continuarCadastro == "sim" && continuarCadastro == "não") {
     alert('Digite apenas "sim" ou "não"!');
-    continuarCadastro = prompt('Quer cadastrar mais algum vinho? (Responda "sim" ou "não":\n👇 ');
+    continuarCadastro = prompt('Quer cadastrar mais algum vinho? (Responda "sim" ou "não":\n👇) ');
 }
 while(continuarCadastro == "sim") {
     cadastroVinho = prompt("Beleza! Digite outro vinho:\n👇 ");
     cadastros++;
     alert("Vinho cadastrado com sucesso!");
     var safra = parseInt(prompt("Qual a safra do vinho:\n👇 "));
+    while (isNaN(safra)) {
+        alert("Digite um ano válido.");
+        safra = parseInt(prompt("Qual a safra do vinho:\n👇 "));
+    }
     var quantidade = parseInt(prompt("Quantos vinhos têm no estoque:\n👇 "));
+    while (isNaN(quantidade)) {
+        alert("Digite uma quantidade válida. ");
+        quantidade = parseInt(prompt("Quantos vinhos têm no estoque:\n👇 "));
+    }
     var estoqueAviso = estoqueBaixo(quantidade);
     var idade = anoAtual - safra;
     var classificacao = classificarVinho(idade);

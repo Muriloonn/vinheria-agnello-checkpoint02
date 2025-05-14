@@ -16,5 +16,6 @@ Dessa forma, a gestão do estoque se torna mais organizada, econômica e totalme
 
 [GitHub Pages](https://muriloonn.github.io/vinheria-agnello-checkpoint02/)
 
+### Demonstração do projeto
 
-
+![Demonstração do sistema](./src/assets/imgs/videodavinheriaCP2web-ezgif.com-optimize.gif)
